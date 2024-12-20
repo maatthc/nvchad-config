@@ -28,6 +28,7 @@ return {
 			},
 		},
 	},
+
 	{
 		"nvim-tree/nvim-tree.lua",
 		opts = {
@@ -38,6 +39,14 @@ return {
 					},
 				},
 			},
+		},
+	},
+
+	{
+		"rmagatti/auto-session",
+		lazy = false,
+		opts = {
+			suppressed_dirs = { "~/", "~/Documents/", "~/Downloads", "/" },
 		},
 	},
 }
