@@ -54,10 +54,30 @@ return {
 	{
 		"github/copilot.vim",
 		lazy = false,
-		config = function() -- Mapping tab is already used by NvChad
-			vim.g.copilot_no_tab_map = true
+		config = function() -- Mapping Tab is already used by nvim-cmp
+ 			vim.g.copilot_no_tab_map = true
 			vim.g.copilot_assume_mapped = true
 			vim.g.copilot_tab_fallback = ""
+		end,
+	},
+
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+		},
+		config = function()
+			require("noice").setup({
+				lsp = {
+					override = {
+						["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+						["vim.lsp.util.stylize_markdown"] = true,
+						["cmp.entry.get_documentation"] = true,
+					},
+				},
+			})
 		end,
 	},
 }
