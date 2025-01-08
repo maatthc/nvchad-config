@@ -54,7 +54,9 @@ return {
 	{
 		"github/copilot.vim",
 		lazy = false,
-		config = function() -- Mapping Tab is already used by nvim-cmp
+		config = function() 
+      -- Mapping Tab is already used by nvim-cmp
+      -- Create a fallback to use <S-Space> instead
  			vim.g.copilot_no_tab_map = true
 			vim.g.copilot_assume_mapped = true
 			vim.g.copilot_tab_fallback = ""
