@@ -9,7 +9,7 @@ Run ":Copilot setup" to setup Copilot and follow the instructions.
 
 
 ## Terminal
-When you start a new Terminal from Neovim, it will set the NVIM environment variable. 
+When you start a new Terminal from within Neovim, it will set the NVIM environment variable. 
 You can use this to customize your Terminal. 
 For example, you can use the following code to run 'neofetch' only when you start a shell outside Neovim.
 
