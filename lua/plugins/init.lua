@@ -48,6 +48,10 @@ return {
 		lazy = false,
 		opts = {
 			suppressed_dirs = { "~/", "~/Documents/", "~/Downloads", "/" },
+			show_auto_restore_notif = true,
+		},
+		keys = {
+			{ "<leader>ss", "<cmd>SessionSearch<CR>", desc = "Session search" },
 		},
 	},
 
