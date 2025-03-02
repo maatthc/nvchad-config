@@ -15,6 +15,32 @@ Open link in browser: gx
 Open file under cursor: gf
 Redo: Ctrl + r
 
+## Characters
+Go to next character occurrence: f + 2chars / Previous: F + 2chars
+
+## Words
+Go to next word: w/W
+Go to previous word: b/B
+Go to end of word: e/E
+Go to end of previous word: ge
+Delete the rest of the word: dw
+Change the rest of the word: cw
+Replace word inside: ciw
+Replace to the end of word: ce
+
+## Lines
+Go to the beginning of the line: 0
+Go to the first character of the line: _
+Go to the beginning of the previous line: -
+Go to the end of the line: $
+Add new line : o/O
+Delete line: dd
+Delete until the end of the line: D
+Delete line and enter normal mode: S
+Delete line and enter insert mode: cc
+Change line: cc
+
+
 ## Buffers
 New empty buffer: Leader + b
 Close buffer: Leader + x
@@ -41,12 +67,13 @@ Open terminal in a new tab: :tab ter
 
 ## Files
 Search files: Leader + ff
-Grep files: Leader + fw
+Grep into files: Leader + fw
 Open recent file: Leader + fo
 File explorer: Leader + e / Ctrl + n
 Copy whole file: Ctrl + c
 Retrive file content: :r file.txt
 Retrive command output: :r !ls
+Save as new file: w file.txt
 
 ## Command mode
 Enter OS command: !
@@ -91,7 +118,6 @@ Next diagnostic: ]d / Previous: [d
 Diagnose under the cursor: Ctrl + W + d
 Code actions: Leader + ca
 wrong -- Rename symbol: Leader + ra
-Replace word: cwi
 
 ## Git
 View commit history: Leader + c + m
@@ -101,6 +127,7 @@ View git status: Leader + g + t
 Select: v
 Select line: V
 Select block: Ctrl + v
+    Insert should use capital I, A, or c
 Select all: ggVG
 Invert selection start: o
 Select all inside brackets: vi( / vi{ / vi[
