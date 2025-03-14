@@ -83,6 +83,13 @@ return {
 						["cmp.entry.get_documentation"] = true,
 					},
 				},
+				presets = {
+					bottom_search = false, -- use a classic bottom cmdline for search
+					command_palette = true, -- position the cmdline and popupmenu together
+					long_message_to_split = true, -- long messages will be sent to a split
+					inc_rename = false, -- enables an input dialog for inc-rename.nvim
+					lsp_doc_border = false, -- add a border to hover docs and signature help
+				},
 			})
 		end,
 	},
@@ -108,6 +115,35 @@ return {
 			vim.keymap.set({ "n", "x", "o" }, "f", "<Plug>(leap-forward)")
 			vim.keymap.set({ "n", "x", "o" }, "F", "<Plug>(leap-backward)")
 			vim.keymap.set({ "n", "x", "o" }, "gf", "<Plug>(leap-from-window)")
+		end,
+	},
+	{
+		"hrsh7th/nvim-cmp",
+		lazy = false,
+		dependencies = {
+			{ "hrsh7th/cmp-cmdline" },
+		},
+		opts = function()
+			local cmp = require("cmp")
+			cmp.setup.cmdline("/", {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = {
+					{ name = "buffer" },
+				},
+			})
+			cmp.setup.cmdline(":", {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = cmp.config.sources({
+					{ name = "path" },
+				}, {
+					{
+						name = "cmdline",
+						option = {
+							ignore_cmds = { "Man", "!" },
+						},
+					},
+				}),
+			})
 		end,
 	},
 }
