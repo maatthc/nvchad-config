@@ -1,5 +1,11 @@
-require "nvchad.options"
+require("nvchad.options")
 local o = vim.o
 
 o.relativenumber = true
-o.cursorlineopt ='both'
+o.cursorlineopt = "both"
+
+-- Fold options (using nvim-ufo)
+o.foldcolumn = "1" -- '0' is not bad
+o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+o.foldlevelstart = 99
+o.foldenable = true
