@@ -15,3 +15,7 @@ for i = 13, 30 do
 	map({ "n", "v", "i", "c" }, "<F" .. i .. ">", "<nop>", { desc = "Ignore function keys" })
 end
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+
+-- Fold options (using nvim-ufo)
+vim.keymap.set("n", "zR", require("ufo").openAllFolds)
+vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
