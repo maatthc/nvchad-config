@@ -29,6 +29,38 @@ Open file under cursor: gf
 
 Redo: Ctrl + r
 
+## Surrounding (type FAST the ys/ds/cs/yss..)
+https://github.com/kylechui/nvim-surround/blob/main/doc/nvim-surround.txt
+
+Repeatable with . (dot)
+
+q is aliased to `,'," - use 'q' as the old surrounding when changing!
+E.g: "test" -> 'test' : csq'
+
+When changing or removing, cursor is placed between surrounding.
+
+Can be used with html tags.
+
+Add surrounding: ys + motion + surrounding
+Add for entire line or multiple words: yss + surrounding
+Change surrounding: cs + old + New
+Delete surrounding: ds + surrounding
+
+    Old text                    Command         New text
+--------------------------------------------------------------------------------
+    surr*ound_words             ysiw)           (surround_words)
+    *make strings               ys$"            "make strings"
+    [delete ar*ound me!]        ds]             delete around me!
+    remove <b>HTML t*ags</b>    dst             remove HTML tags
+    'change quot*es'            csq"            "change quotes"        <<<----
+    "test"                      dsq             test
+    <b>or tag* types</b>        csth1<CR>       <h1>or tag types</h1>
+    Title                       ysiwtH1 id='test'   <H1 id='test'>Title</H1>
+    delete(functi*on calls)     dsf             function calls
+    arg*s                       ysiwffunc       func(args)
+    f*unc_name(a, b, x)         dsf             a, b, x
+    f*unc_name(a, b, x)         csfnew_name     new_name(a, b, x)
+
 ## Text Objects
 Defaults: w/W, s/S, p/P, t/T, (, ), {, }, ", ', `, [, ], <, >, /
 
@@ -42,20 +74,42 @@ cgc : to change it
 ygc : to yank it
 gcgc: to uncomment
 
-#### Additionals (~30)
+#### Additional 
 https://github.com/chrisgrieser/nvim-various-textobjs?tab=readme-ov-file#list-of-text-objects
 
-ii/ai - Inner/around indentation
-gG - Whole Buffer
-i_/a_ - Line
-L - url
-in/an - Number
-iD/aD - [[]]
-ix/ax - html Attribute
-i#/a# - cssColor
-g; - Last change
-...
-
+indentation	ii, ai, aI, (iI)
+restOfIndentation	R
+greedyOuterIndentation	ag/ig
+subword	iS/aS
+toNextClosingBracket	C
+toNextQuotationMark	Q
+anyQuote	iq/aq
+anyBracket	io/ao
+restOfParagraph	r
+entireBuffer	gG
+nearEoL	n
+lineCharacterwise	i_/a_
+column	|
+value	iv/av
+key	ik/ak
+url	L
+number	in/an
+diagnostic	!
+closedFold	iz/az
+chainMember	im/am
+visibleInWindow	gw
+restOfWindow	gW
+lastChange	g;
+mdLink	il/al
+mdEmphasis	ie/ae
+mdFencedCodeBlock	iC/aC
+cssSelector	ic/ac
+cssColor	i#/a#
+htmlAttribute	ix/ax
+doubleSquareBrackets	iD/aD
+shellPipe	iP/aP
+pyTripleQuotes	iy/ay
+notebookCell	iN/aN
 
 ## Stay in insert mode
 In insert mode:
@@ -188,6 +242,10 @@ Paste from yank: Ctrl + r + "/*/+/- (see :help registers)
 Completion suggestions for open file: Ctrl + d
 
 ## Page navigation
+zt: Scroll the current line to the top of the windows
+zz: Scroll the current line to the middle of the Windows
+zb: Scroll the current line to the bottom of the windows
+
 Scroll up: Ctrl + b
 
 Scroll up half page: Ctrl + u
@@ -301,6 +359,7 @@ g/The/normal A //Comment - Add '//Comment' to the end of all lines that match 'T
 g/The/normal I # - Add '#' to the beginning of all lines that match 'The'
 g/.*/y - Yank all lines but you have access only to the last one ?
 :1,5g/console/d matches the string "console" between lines 1 and 5 and deletes them.
+:1,+5g/console/d matches 5 lines starting from line 1 and deletes them.
 :g/^$/,/./-1j - Join all lines between empty lines
 
 ## ArgLists
