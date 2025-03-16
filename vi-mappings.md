@@ -288,6 +288,8 @@ Move to the next/previous 2 letters match: f + char + char (Leap plugin)
 ## Folding
 Press zM to fold all initialy (and zR to unfold all) so the following commands work:
 
+Fold all: zM
+Unfold all: zR
 Toggle fold under cursor: za
 Toggle all folds: zi
 Open fold under cursor: zo
