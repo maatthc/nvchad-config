@@ -14,6 +14,9 @@ return {
 
 	{
 		"nvim-treesitter/nvim-treesitter",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter-textobjects",
+		},
 		opts = {
 			ensure_installed = {
 				"vim",
@@ -26,6 +29,7 @@ return {
 				"json",
 				"zig",
 			},
+			textobjects = require("configs.treesitter-textobjects"),
 		},
 	},
 
