@@ -1,4 +1,16 @@
 return {
+	-- Bundle of more than 30 new text objects
+	-- https://github.com/chrisgrieser/nvim-various-textobjs?tab=readme-ov-file#list-of-text-objects
+	{
+		"chrisgrieser/nvim-various-textobjs",
+		event = "VeryLazy",
+		opts = {
+			keymaps = {
+				useDefaults = true,
+			},
+		},
+	},
+
 	{
 		"stevearc/conform.nvim",
 		event = "BufWritePre", -- uncomment for format on save
