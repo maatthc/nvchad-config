@@ -34,7 +34,6 @@ Defaults: w/W, s/S, p/P, t/T, (, ), {, }, ", ', `, [, ], <, >, /
 
 ### Programming
 Function: af/if
-Class: ac/ic
 
 #### Comment Blocks
 vgc : to select
@@ -42,6 +41,21 @@ dgc : to delete it
 cgc : to change it
 ygc : to yank it
 gcgc: to uncomment
+
+#### Additionals (~30)
+https://github.com/chrisgrieser/nvim-various-textobjs?tab=readme-ov-file#list-of-text-objects
+
+ii/ai - Inner/around indentation
+gG - Whole Buffer
+i_/a_ - Line
+L - url
+in/an - Number
+iD/aD - [[]]
+ix/ax - html Attribute
+i#/a# - cssColor
+g; - Last change
+...
+
 
 ## Stay in insert mode
 In insert mode:
@@ -65,7 +79,7 @@ gu/gU - Lower/Upper case: yes motion
 
 ## Registers (clipboard)
 List: "
-Select: "*/+/"/-/./1/2/3 ..
+Select: "*/+/"/-/./0/1/2/3 ..
 Paste: p
 Whatever your entered in insert mode last time: Ctrl + r + .
 
