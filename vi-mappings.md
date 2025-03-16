@@ -1,4 +1,6 @@
-# Vim Key mappings
+# Key mappings
+
+WIP
 
 ## General
 Leader: Space
@@ -8,6 +10,8 @@ A: Alt
 C: Ctrl
 
 S: Shift
+
+.: Repeate last command
 
 Themes: Leader + th 
 
@@ -24,6 +28,46 @@ Open link in browser: gx
 Open file under cursor: gf
 
 Redo: Ctrl + r
+
+## Text Objects
+Defaults: w/W, s/S, p/P, t/T, (, ), {, }, ", ', `, [, ], <, >, /
+
+### Programming
+Function: af/if
+Class: ac/ic
+
+#### Comment Blocks
+vgc : to select
+dgc : to delete it
+cgc : to change it
+ygc : to yank it
+gcgc: to uncomment
+
+## Stay in insert mode
+In insert mode:
+
+### Registers
+Paste from clipboard: Ctrl + r + Register name
+Paste whatever you entered in insert mode last time: Ctrl + a
+
+### Filename Completion
+https://github.com/hrsh7th/nvim-cmp
+Just start typing the filename path! Starts with ./ if in the same directory
+Even shows you the file content.
+
+## Operations 
+d/c/y = basic
+4~ - Swap CASE: no motion
+gu/gU - Lower/Upper case: yes motion
+>/< - Indent
+5+ - Go to column 0 of the 5th line below
+4$ - Go to the 4th line end
+
+## Registers (clipboard)
+List: "
+Select: "*/+/"/-/./1/2/3 ..
+Paste: p
+Whatever your entered in insert mode last time: Ctrl + r + .
 
 ## Characters
 Go to next character occurrence: f + 2chars / Previous: F + 2chars
@@ -150,7 +194,8 @@ Go back to next location: Ctrl + i
 
 Go back to last location on the same file: '' (see :help mark-motions)
 
-Go to last insert location: g;
+Go to previous insert location: g;
+Go to last insert location: g,
 
 Go to next character occurrence: t + char / Previous: T + char
 
@@ -168,10 +213,20 @@ Move cursor to the BOTTOM of the screen: L
 
 Move to the next/previous 2 letters match: f + char + char (Leap plugin) 
 
+## Folding
+Press zM to fold all initialy (and zR to unfold all) so the following commands work:
+
+Toggle fold under cursor: za
+Toggle all folds: zi
+Open fold under cursor: zo
+Close fold under cursor: zc
+
+In case of problems, use zR/zM 
+
 ## Code
 Format code: Leader + fm
 
-Comment line: Leader + / or gc
+Comment line: Leader + / - Better: gc4j or gcap
 
 Jump de implementation: gi
 
@@ -225,7 +280,14 @@ Call command with selection: :!cmd
 Increase numbers in selection: g <Ctrl + a>
 
 ## Globals
-Find a line and apply a command to it: https://www.youtube.com/watch?v=1M-XDGc20ns
+g/regex/vim command/ - Execute command on all lines that match the regex
+g!/regex/d - delete all lines that NOT match the regex
+g/where/s/what/with/g - Replace what with with on all lines that match 'where' 
+g/The/normal A //Comment - Add '//Comment' to the end of all lines that match 'The'
+g/The/normal I # - Add '#' to the beginning of all lines that match 'The'
+g/.*/y - Yank all lines but you have access only to the last one ?
+:1,5g/console/d matches the string "console" between lines 1 and 5 and deletes them.
+:g/^$/,/./-1j - Join all lines between empty lines
 
 ## ArgLists
 Source: http://www.vimgenius.com/lessons/vim-arglist
