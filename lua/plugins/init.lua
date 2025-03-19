@@ -158,6 +158,8 @@ return {
 			})
 		end,
 	},
+
+	-- Folding
 	{
 		"kevinhwang91/nvim-ufo",
 		event = "VeryLazy",
