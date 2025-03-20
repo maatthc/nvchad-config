@@ -1,15 +1,15 @@
 return {
 	-- Bundle of more than 30 new text objects
 	-- https://github.com/chrisgrieser/nvim-various-textobjs?tab=readme-ov-file#list-of-text-objects
-	{
-		"chrisgrieser/nvim-various-textobjs",
-		event = "VeryLazy",
-		opts = {
-			keymaps = {
-				useDefaults = true,
-			},
-		},
-	},
+	-- {
+	-- 	"chrisgrieser/nvim-various-textobjs",
+	-- 	event = "VeryLazy",
+	-- 	opts = {
+	-- 		keymaps = {
+	-- 			useDefaults = true,
+	-- 		},
+	-- 	},
+	-- },
 
 	{
 		"stevearc/conform.nvim",
@@ -26,9 +26,9 @@ return {
 
 	{
 		"nvim-treesitter/nvim-treesitter",
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter-textobjects",
-		},
+		-- dependencies = {
+		-- 	"nvim-treesitter/nvim-treesitter-textobjects",
+		-- },
 		opts = {
 			ensure_installed = {
 				"vim",
@@ -172,6 +172,7 @@ return {
 			end,
 		},
 	},
+
 	{
 		"kylechui/nvim-surround",
 		version = "^3.0.0", -- Use for stability; omit to use `main` branch for the latest features
