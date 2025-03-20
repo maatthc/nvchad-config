@@ -43,8 +43,18 @@ autocmd("BufReadPost", {
 })
 
 -- Highlight yanked text
-vim.api.nvim_create_autocmd("TextYankPost", {
+autocmd("TextYankPost", {
 	callback = function()
 		vim.highlight.on_yank()
+	end,
+})
+
+-- Automatically start insert mode in terminal buffers
+vim.api.nvim_create_autocmd({ "TermOpen", "BufEnter" }, {
+	pattern = { "*" },
+	callback = function()
+		if vim.opt.buftype:get() == "terminal" then
+			vim.cmd(":startinsert")
+		end
 	end,
 })
