@@ -215,4 +215,9 @@ return {
 			border = "single", -- single, rounded, etc.
 		},
 	},
+	{
+		"gbprod/cutlass.nvim",
+		event = "VeryLazy",
+		opts = {},
+	},
 }
