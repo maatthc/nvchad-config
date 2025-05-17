@@ -12,6 +12,7 @@ C: Ctrl
 
 S: Shift
 
+.: Repeate last command or motion
 
 Themes: Leader + th 
 
