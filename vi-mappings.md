@@ -3,7 +3,6 @@
 WIP
 
 ## General
-
 Leader: Space
 
 A: Alt
@@ -30,15 +29,12 @@ Open file under cursor: gf
 
 Redo: Ctrl + r
 
+## Surrounding (type FAST the ys/ds/cs/yss..)
+https://github.com/kylechui/nvim-surround/blob/main/doc/nvim-surround.txt
 
-### Surrounding (type FAST the ys/ds/cs/yss..)
-[Link](https://github.com/kylechui/nvim-surround/blob/main/doc/nvim-surround.txt)
+Repeatable with . (dot)
 
-    Repeatable with . (dot)
-
-Surrounding a line: yss
-
-q is aliased to : ` ' and " - use 'q' as the old surrounding when changing!
+q is aliased to `,'," - use 'q' as the old surrounding when changing!
 E.g: "test" -> 'test' : csq'
 
 When changing or removing, cursor is placed between surrounding.
@@ -140,8 +136,6 @@ List: "
 Select: "*/+/"/-/./0/1/2/3 ..
 Paste: p
 Whatever your entered in insert mode last time: Ctrl + r + .
-Replace current line: Vp
-Deleting_a_line_without_copying_it:/ttps://www.reddit.com/r/vim/comments/ilp32r/deleting_a_line_without_copying_it/
 
 ## Characters
 Go to next character occurrence: f + 2chars / Previous: F + 2chars
@@ -184,10 +178,6 @@ Delete line and enter insert mode: cc
 
 Change line: cc
 
-## Paragraphs
-Go to the beginning of the paragraph: {
-Go to the end of the paragraph: }
-Wrap long lines: Vgq
 
 ## Buffers
 New empty buffer: Leader + b
@@ -228,8 +218,6 @@ Open terminal in a new tab: :tab ter
 ## Files
 Search files: Leader + ff
 
-Search for word under cursor: *    <<<----
-
 Grep into files: Leader + fw
 
 Open recent file: Leader + fo
@@ -237,8 +225,6 @@ Open recent file: Leader + fo
 File explorer: Leader + e / Ctrl + n
 
 Copy whole file: Ctrl + c
-
-Save file: Crtl + s
 
 Retrive file content: :r file.txt
 
@@ -324,7 +310,7 @@ Show references: gr
 
 Jump to next syntax error: ]d / Previous: [d
 
-Rover function documentation: Shift + k
+Rover function signature: Shift + k
 
 Copilot accept suggestion: Shift + Enter
 
@@ -346,10 +332,6 @@ wrong -- Rename symbol: Leader + ra
 View commit history: Leader + c + m
 
 View git status: Leader + g + t
-
-Line blame: Gitsigns toggle_current_line_blame
-
-Diff: Gitsigns diffthis
 
 ## Visual mode
 Select: v
