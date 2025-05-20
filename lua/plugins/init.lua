@@ -16,88 +16,7 @@ return {
 		priority = 1000,
 		lazy = false,
 		---@type snacks.Config
-		opts = {
-			dashboard = {
-				enabled = true,
-				width = 60,
-				pane_gap = 16,
-				sections = {
-					{
-						section = "header",
-						align = "center",
-						enabled = function()
-							return not (vim.o.columns > 135)
-						end,
-					},
-					{
-						pane = 1,
-						{
-							enabled = function()
-								return vim.o.columns > 135
-							end,
-							section = "terminal",
-							cmd = "chafa ~/.config/nvim/assets/waves.gif --size 55x32 --format symbols --stretch; sleep 1",
-							ttl = 0,
-							height = 32,
-							width = 56,
-							padding = 1,
-						},
-						{
-							section = "startup",
-							padding = 1,
-							enabled = function()
-								return vim.o.columns > 135
-							end,
-						},
-					},
-					{
-						pane = 2,
-						{ section = "keys", padding = 2, gap = 1 },
-						{
-							icon = " ",
-							title = "Recent Files",
-						},
-						{
-							section = "recent_files",
-							opts = { limit = 3 },
-							indent = 2,
-							padding = 1,
-						},
-						{
-							icon = " ",
-							title = "Projects",
-						},
-						{
-							section = "projects",
-							opts = { limit = 3 },
-							indent = 2,
-							padding = 1,
-						},
-						{
-							section = "startup",
-							padding = 1,
-							enabled = function()
-								return not (vim.o.columns > 135)
-							end,
-						},
-					},
-				},
-			},
-			bigfile = { enabled = true },
-			indent = { enabled = true },
-			input = { enabled = true },
-			animate = { enabled = true },
-			picker = { enabled = true },
-			notifier = { enabled = true },
-			image = { enabled = true },
-			lazygit = { enabled = true },
-			quickfile = { enabled = true },
-			scope = { enabled = true },
-			statuscolumn = { enabled = true },
-			win = { enabled = true },
-			words = { enabled = true },
-			scroll = { enabled = true },
-		},
+		opts = require("configs.snacks"),
 	},
 
 	{
@@ -200,7 +119,7 @@ return {
 	},
 
 	{
-		"ggandor/leap.nvim", -- Leap Motion has the key 's' hardcoded, so we need to remove it to use 'f'
+		"ggandor/leap.nvim", -- Leap Motion has the key 's' hard coded, so we need to remove it to use 'f'
 		enabled = true,
 		keys = {
 			{ "f", mode = { "n", "x", "o" }, desc = "Leap Forward to" },
