@@ -22,3 +22,6 @@ vim.g.clipboard = {
 		["*"] = require("vim.ui.clipboard.osc52").paste("*"),
 	},
 }
+
+o.spelllang = "en_au"
+o.spell = true

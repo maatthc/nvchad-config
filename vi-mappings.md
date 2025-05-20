@@ -163,6 +163,14 @@ Replace word inside: ciw
 
 Replace to the end of word: ce
 
+### Spelling
+Go to next misspelled word: ]s / Previous: [s
+View spelling suggestions: z=
+    Select the number of the suggestions
+        To repeat the same correction on all the same misspelled words: spellrepall 
+Add word to dictionary: zg
+
+
 ## Lines
 Go to the beginning of the line: 0
 
@@ -340,7 +348,7 @@ Diagnose under the cursor: Ctrl + W + d
 
 Code actions: Leader + ca
 
-wrong -- Rename symbol: Leader + ra
+Wrong -- Rename symbol: Leader + ra
 
 ## Git
 View commit history: Leader + c + m
