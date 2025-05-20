@@ -24,4 +24,3 @@ vim.g.clipboard = {
 }
 
 o.spelllang = "en_au"
-o.spell = true

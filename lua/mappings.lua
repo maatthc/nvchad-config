@@ -17,8 +17,22 @@ for i = 13, 30 do
 end
 
 -- Fold options (using nvim-ufo)
-map("n", "zR", require("ufo").openAllFolds)
-map("n", "zM", require("ufo").closeAllFolds)
+map("n", "zR", require("ufo").openAllFolds, { desc = "Open all folds" })
+map("n", "zM", require("ufo").closeAllFolds, { desc = "Close all folds" })
 
 -- Esc to exit terminal mode
-map("t", "<Esc>", "<C-\\><C-n>")
+map("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
+map("n", "<leader>db", function()
+	Snacks.dashboard.open()
+end, { desc = "Show Snack Dashboard" })
+
+map("n", "<leader>sp", function()
+	if vim.o.spell then
+		vim.o.spell = false
+		vim.notify("Spell check disabled")
+	else
+		vim.o.spell = true
+		vim.notify("Spell check enabled")
+	end
+end, { desc = "Toggle Spell check" })
