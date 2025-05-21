@@ -227,6 +227,11 @@ return {
 	},
 
 	{
+		"folke/which-key.nvim",
+		lazy = false,
+	},
+
+	{
 		"gbprod/cutlass.nvim",
 		event = "VeryLazy",
 		opts = { cut_key = "m", registers = { change = "c" } },
