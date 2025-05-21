@@ -17,6 +17,7 @@ local M = {}
 
 M.base46 = {
 	theme = "bearded-arc",
+	integrations = { "render-markdown" },
 }
 
 M.term = {
