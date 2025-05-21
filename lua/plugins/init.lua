@@ -212,34 +212,7 @@ return {
 		event = "VeryLazy",
 		dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.icons" }, -- if you use standalone mini plugins
 		---@module 'render-markdown'
-		config = function()
-			-- Base46 integration cache load
-			dofile(vim.g.base46_cache .. "render-markdown")
-			---@type render.md.UserConfig
-			local opts = {
-				completions = {
-					lsp = { enabled = true },
-				},
-				render_modes = { "n", "c", "t" },
-				heading = {
-					sign = false,
-					border = true,
-					below = "▔",
-					above = "▁",
-					left_pad = 0,
-					position = "left",
-					icons = {
-						"█ ",
-						"██ ",
-						"███ ",
-						"████ ",
-						"█████ ",
-						"██████ ",
-					},
-				},
-			}
-			require("render-markdown").setup(opts)
-		end,
+		opts = require("configs.render-markdown"),
 	},
 	{
 		"vimichael/floatingtodo.nvim",
