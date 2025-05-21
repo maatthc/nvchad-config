@@ -207,6 +207,7 @@ return {
 			gamma = 1,
 		},
 	},
+
 	{
 		"MeanderingProgrammer/render-markdown.nvim",
 		event = "VeryLazy",
@@ -214,6 +215,8 @@ return {
 		---@module 'render-markdown'
 		opts = require("configs.render-markdown"),
 	},
+
+	-- :Td
 	{
 		"vimichael/floatingtodo.nvim",
 		event = "VeryLazy",
@@ -222,9 +225,10 @@ return {
 			border = "single", -- single, rounded, etc.
 		},
 	},
+
 	{
 		"gbprod/cutlass.nvim",
 		event = "VeryLazy",
-		opts = {},
+		opts = { cut_key = "m", registers = { change = "c" } },
 	},
 }
