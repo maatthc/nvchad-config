@@ -34,7 +34,22 @@ return {
 			},
 			{
 				pane = 2,
-				{ section = "keys", padding = 2, gap = 1 },
+				{ section = "keys", padding = 1, gap = 1 },
+				{
+					action = "<leader>th",
+					key = "t",
+					desc = "Themes",
+					icon = "󱥚",
+					padding = 1,
+				},
+				{
+					action = "<leader>ch",
+					key = "m",
+					desc = "Mappings",
+					icon = " ",
+					padding = 1,
+					gap = 1,
+				},
 				{
 					icon = " ",
 					title = "Recent Files",
