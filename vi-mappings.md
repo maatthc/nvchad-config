@@ -135,13 +135,22 @@ gu/gU - Lower/Upper case: yes motion
 5+ - Go to column 0 of the 5th line below
 4$ - Go to the 4th line end
 
-## Registers (clipboard)
+## Which Key
+
+https://github.com/folke/which-key.nvim
+
+### Registers (clipboard)
 List: "
 Select: "*/+/"/-/./0/1/2/3 ..
 Paste: p
 Whatever your entered in insert mode last time: Ctrl + r + .
 Replace current line: Vp
 Deleting_a_line_without_copying_it:/ttps://www.reddit.com/r/vim/comments/ilp32r/deleting_a_line_without_copying_it/
+
+### Marks (bookmarks)
+List: '
+Select: '' / '" / '[ / '] / '. / 'O ..
+Jump back and forth: ''
 
 ## Characters
 Go to next character occurrence: f + 2chars / Previous: F + 2chars
