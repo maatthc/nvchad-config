@@ -25,8 +25,13 @@ local plugins = {
 		lazy = false,
 	},
 	{
-		"gbprod/cutlass.nvim",
+		"folke/noice.nvim",
 		event = "VeryLazy",
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+		},
+		opts = { presets = { bottom_search = false, command_palette = true } },
 	},
 }
 require("lazy").setup(plugins, { root = root .. "/plugins" })
