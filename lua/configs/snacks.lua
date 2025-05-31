@@ -1,3 +1,11 @@
+if vim.loop.os_uname().sysname == "Linux" then
+	-- Linux:
+	ImgCmd = "chafa ~/.config/nvim/assets/waves.gif --size 55x32 --format symbols --stretch; sleep 1"
+else
+	-- MacOs: https://github.com/danielgatis/imgcat
+	ImgCmd = "imgcat ~/.config/nvim/assets/waves.gif"
+end
+
 return {
 	dashboard = {
 		enabled = true,
@@ -18,7 +26,7 @@ return {
 						return vim.o.columns > 135
 					end,
 					section = "terminal",
-					cmd = "chafa ~/.config/nvim/assets/waves.gif --size 55x32 --format symbols --stretch; sleep 1",
+					cmd = ImgCmd,
 					ttl = 0,
 					height = 32,
 					width = 56,

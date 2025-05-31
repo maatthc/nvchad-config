@@ -123,6 +123,8 @@ Paste from clipboard: Ctrl + r + Register name
 Paste whatever you entered in insert mode last time: Ctrl + a
 
 ### Filename Completion
+
+Name of the open file: echo bufname("%")
 https://github.com/hrsh7th/nvim-cmp
 Just start typing the filename path! Starts with ./ if in the same directory
 Even shows you the file content.
