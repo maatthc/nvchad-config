@@ -48,6 +48,7 @@ return {
 				"typescript",
 				"json",
 				"zig",
+				"python",
 			},
 			textobjects = require("configs.treesitter-textobjects"),
 		},
