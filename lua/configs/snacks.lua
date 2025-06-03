@@ -24,7 +24,7 @@ return {
 					end,
 					section = "terminal",
 					cmd = ImgCmd,
-					ttl = 0,
+					-- ttl = 0,
 					height = 32,
 					width = 56,
 					padding = 1,

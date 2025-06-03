@@ -24,7 +24,7 @@ map("n", "zM", require("ufo").closeAllFolds, { desc = "Close all folds" })
 map("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 map("n", "<leader>db", function()
-	Snacks.dashboard.open()
+	require("snacks").dashboard.open()
 end, { desc = "Show Snack Dashboard" })
 
 map("n", "<leader>sp", function()

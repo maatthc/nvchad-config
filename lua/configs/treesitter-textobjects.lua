@@ -77,10 +77,10 @@ local textobjects = {
 		-- Use if you want more granular movements
 		-- Make it even more gradual by adding multiple queries and regex.
 		goto_next = {
-			["]d"] = "@conditional.outer",
+			["]c"] = "@conditional.outer",
 		},
 		goto_previous = {
-			["[d"] = "@conditional.outer",
+			["[c"] = "@conditional.outer",
 		},
 	},
 }
