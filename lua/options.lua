@@ -24,3 +24,5 @@ vim.g.clipboard = {
 }
 
 o.spelllang = "en_au"
+
+o.sessionoptions = "localoptions"
