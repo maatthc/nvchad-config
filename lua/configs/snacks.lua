@@ -1,9 +1,6 @@
-if vim.loop.os_uname().sysname == "Linux" then
-	-- Linux:
-	ImgCmd = "chafa ~/.config/nvim/assets/waves.gif --size 55x32 --format symbols --stretch; sleep 1"
-else
-	-- MacOs: https://github.com/danielgatis/imgcat
-	ImgCmd = "imgcat ~/.config/nvim/assets/waves.gif"
+if vim.loop.os_uname().sysname ~= "Win" then
+	-- https://github.com/danielgatis/imgcat
+	ImgCmd = "imgcat ~/.config/nvim/assets/waves.gif -silent=true -type=resize -top-offset=1"
 end
 
 return {
@@ -89,17 +86,7 @@ return {
 		},
 	},
 	bigfile = { enabled = true },
-	indent = { enabled = true },
-	input = { enabled = true },
-	animate = { enabled = true },
-	picker = { enabled = true },
-	notifier = { enabled = true },
 	image = { enabled = true },
 	lazygit = { enabled = true },
-	quickfile = { enabled = true },
-	scope = { enabled = true },
-	statuscolumn = { enabled = true },
-	win = { enabled = true },
-	words = { enabled = true },
 	scroll = { enabled = true },
 }
