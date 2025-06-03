@@ -34,9 +34,9 @@ return {
 
 	{
 		"nvim-treesitter/nvim-treesitter",
-		-- dependencies = {
-		-- 	"nvim-treesitter/nvim-treesitter-textobjects",
-		-- },
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter-textobjects",
+		},
 		opts = {
 			ensure_installed = {
 				"vim",
@@ -73,10 +73,6 @@ return {
 		lazy = false,
 		opts = {
 			suppressed_dirs = { "~/", "~/Documents/", "~/Downloads", "/" },
-			show_auto_restore_notif = true,
-		},
-		keys = {
-			{ "<leader>ss", "<cmd>SessionSearch<CR>", desc = "Session search" },
 		},
 	},
 
