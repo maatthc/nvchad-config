@@ -1,7 +1,7 @@
-local group = vim.api.nvim_create_augroup("mine", { clear = true })
+local group = vim.api.nvim_create_augroup("maat", { clear = true })
 local autocmd = vim.api.nvim_create_autocmd
 
--- Show Nvdash when all buffers are closed
+-- Show dashboard when all buffers are closed
 autocmd("BufDelete", {
 	callback = function()
 		local bufs = vim.t.bufs
