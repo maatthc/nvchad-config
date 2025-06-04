@@ -40,6 +40,9 @@ M.ui = {
 			end,
 		},
 	},
+	nvdash = {
+		load_on_startup = false,
+	},
 }
 
 return M
