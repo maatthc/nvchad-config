@@ -38,10 +38,12 @@ autocmd("TextYankPost", {
 })
 
 -- Automatically start insert mode in terminal buffers
+-- but not for the terminal of the dashboard
 autocmd({ "TermOpen", "BufEnter" }, {
 	pattern = { "*" },
-	callback = function()
-		if vim.opt.buftype:get() == "terminal" then
+	callback = function(ev)
+		if string.find(ev.match, "term") ~= nil then
+			-- print(print(vim.inspect(ev)))
 			vim.cmd(":startinsert")
 		end
 	end,
