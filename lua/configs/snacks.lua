@@ -1,7 +1,24 @@
-if vim.loop.os_uname().sysname ~= "Win" then
-	-- https://github.com/danielgatis/imgcat
-	ImgCmd = "imgcat ~/.config/nvim/assets/waves.gif -silent=true -type=resize -top-offset=1"
+local imgcat = "imgcat"
+
+if vim.fn.executable(imgcat) == 0 then
+	return {
+		dashboard = {
+			preset = {
+				header = { "'imgcat' not found: please install it from: https://github.com/danielgatis/imgcat" },
+			},
+		},
+	}
 end
+
+if vim.loop.os_uname().sysname == "Linux" then
+	Gif = "waves.gif"
+else
+	Gif = "it-crowd.gif"
+end
+
+local path = vim.fn.stdpath("config") .. "/assets/"
+local params = " -silent=true -type=resize -top-offset=1 "
+local imgCmd = imgcat .. params .. path .. Gif
 
 return {
 	dashboard = {
@@ -23,7 +40,7 @@ return {
 						return vim.o.columns > 135
 					end,
 					section = "terminal",
-					cmd = ImgCmd,
+					cmd = imgCmd,
 					-- ttl = 0,
 					height = 32,
 					width = 56,
