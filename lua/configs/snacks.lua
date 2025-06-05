@@ -20,24 +20,27 @@ local path = vim.fn.stdpath("config") .. "/assets/"
 local params = " -silent=true -type=resize -top-offset=1 "
 local imgCmd = imgcat .. params .. path .. Gif
 
+local minCol = 135
+local paneGap = vim.o.columns > (minCol + 10) and 16 or 3
+
 return {
 	dashboard = {
 		enabled = true,
 		width = 60,
-		pane_gap = 16,
+		pane_gap = paneGap,
 		sections = {
 			{
 				section = "header",
 				align = "center",
 				enabled = function()
-					return not (vim.o.columns > 135)
+					return not (vim.o.columns > minCol)
 				end,
 			},
 			{
 				pane = 1,
 				{
 					enabled = function()
-						return vim.o.columns > 135
+						return vim.o.columns > minCol
 					end,
 					section = "terminal",
 					cmd = imgCmd,
@@ -50,7 +53,7 @@ return {
 					section = "startup",
 					padding = 1,
 					enabled = function()
-						return vim.o.columns > 135
+						return vim.o.columns > minCol
 					end,
 				},
 			},
@@ -96,7 +99,7 @@ return {
 					section = "startup",
 					padding = 1,
 					enabled = function()
-						return not (vim.o.columns > 135)
+						return not (vim.o.columns > minCol)
 					end,
 				},
 			},
