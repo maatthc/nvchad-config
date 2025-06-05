@@ -33,7 +33,7 @@ return {
 				section = "header",
 				align = "center",
 				enabled = function()
-					return not (vim.o.columns > minCol)
+					return vim.o.columns < minCol
 				end,
 			},
 			{
@@ -99,7 +99,7 @@ return {
 					section = "startup",
 					padding = 1,
 					enabled = function()
-						return not (vim.o.columns > minCol)
+						return vim.o.columns < minCol
 					end,
 				},
 			},
