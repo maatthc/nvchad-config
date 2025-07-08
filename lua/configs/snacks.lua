@@ -105,7 +105,7 @@ return {
 			},
 		},
 	},
-	bigfile = { enabled = true },
+	bigfile = { enabled = true, line_length = 10000 },
 	image = { enabled = true },
 	lazygit = { enabled = true },
 	scroll = { enabled = true },
