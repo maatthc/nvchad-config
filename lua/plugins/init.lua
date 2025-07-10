@@ -49,6 +49,7 @@ return {
 				"json",
 				"zig",
 				"python",
+				"go",
 			},
 			textobjects = require("configs.treesitter-textobjects"),
 		},
