@@ -29,7 +29,7 @@ M.term = {
 M.ui = {
 	statusline = {
 		theme = "default",
-		order = { "mode", "relativepath", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cwd", "cursor" },
+		order = { "mode", "cwd", "relativepath", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cursor" },
 		modules = {
 			relativepath = function()
 				local path = vim.api.nvim_buf_get_name(stbufnr())
