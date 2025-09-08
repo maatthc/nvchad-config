@@ -30,6 +30,7 @@ Open file under cursor: gf
 
 Redo: Ctrl + r
 
+Split buffer horizontally: Crtl + w + v 
 
 ### Surrounding (type FAST the ys/ds/cs/yss..)
 [Link](https://github.com/kylechui/nvim-surround/blob/main/doc/nvim-surround.txt)
