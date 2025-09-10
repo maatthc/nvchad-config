@@ -12,8 +12,10 @@ end, { desc = "Copilot accept" })
 --- To use with Kitty terminal, add this to your kitty.conf:
 --- map shift+space send_text all \x1b[32;2u
 
-for i = 13, 30 do
+-- Ignore Function keys (F13 to F19), used by my Piantor
+for i = 13, 20 do
 	map({ "n", "v", "i", "c" }, "<F" .. i .. ">", "<nop>")
+	map({ "n", "v", "i", "c" }, "<S-F" .. i .. ">", "<nop>")
 end
 
 -- Fold options (using nvim-ufo)
