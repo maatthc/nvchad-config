@@ -1,11 +1,11 @@
-** NvChad Configuration **
+# NvChad Configuration
 
-git clone --depth 1 https://github.com/maatthc/nvchad-config ~/.config/nvim && nvim
+`git clone --depth 1 https://github.com/maatthc/nvchad-config ~/.config/nvim && nvim`
 
 
-Run :MasonInstallAll command after lazy.nvim finishes downloading plugins.
+Run `:MasonInstallAll` command after lazy.nvim finishes downloading plugins.
 
-Run ":Copilot setup" to setup Copilot and follow the instructions.
+Run `:Copilot setup` to setup Copilot and follow the instructions.
 
 
 ## Terminal
@@ -20,3 +20,6 @@ if [[ ! -v NVIM ]]; then
   alias v='nvim'
 fi
 ```
+
+## NvChad Key mappings
+See [here](vi-mappings.md) for more details.
