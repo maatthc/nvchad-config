@@ -286,6 +286,7 @@ In case of problems, use zR/zM
 ## Code
 
 Format code: Leader + fm
+Disable auto format for current buffer, temporarily: Leader + tF
 
 Comment line: Leader + / - Better: gc4j or gcap
 

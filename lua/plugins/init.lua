@@ -23,6 +23,16 @@ return {
 		"stevearc/conform.nvim",
 		event = "BufWritePre", -- uncomment for format on save
 		opts = require("configs.conform"),
+		keys = {
+			{
+				"<leader>tF",
+				function()
+					vim.b.disable_autoformat = not vim.b.disable_autoformat
+					vim.notify("Autoformat: " .. (vim.b.disable_autoformat and "Disabled" or "Enabled"))
+				end,
+				desc = "Toggle autoformat for current buffer",
+			},
+		},
 	},
 
 	{
