@@ -244,4 +244,7 @@ return {
 		event = "VeryLazy",
 		opts = { cut_key = "m", registers = { change = "c" } },
 	},
+
+	-- Terminal splitting and resizing
+	{ "mrjones2014/smart-splits.nvim", lazy = false, build = "./kitty/install-kittens.bash" },
 }
