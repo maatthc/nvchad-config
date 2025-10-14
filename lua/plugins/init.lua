@@ -66,39 +66,25 @@ return {
 	},
 
 	{
-		"nvim-tree/nvim-tree.lua",
-		opts = {
-			filters = { custom = { "^.git$" } },
-			renderer = {
-				icons = {
-					glyphs = {
-						git = { unmerged = "", unstaged = "" },
-					},
-				},
-			},
-		},
-	},
-
-	{
 		"rmagatti/auto-session",
 		lazy = false,
 		opts = {
 			suppressed_dirs = { "~/", "~/Documents/", "~/Downloads", "/" },
 		},
 	},
-
-	{
-		"github/copilot.vim",
-		lazy = false,
-		config = function()
-			-- Mapping Tab is already used by nvim-cmp
-			-- Create a fallback to use <S-Space> instead
-			vim.g.copilot_no_tab_map = true
-			vim.g.copilot_assume_mapped = true
-			vim.g.copilot_tab_fallback = ""
-		end,
-	},
-
+	--
+	-- {
+	-- 	"github/copilot.vim",
+	-- 	lazy = false,
+	-- 	config = function()
+	-- 		-- Mapping Tab is already used by nvim-cmp
+	-- 		-- Create a fallback to use <S-Space> instead
+	-- 		vim.g.copilot_no_tab_map = true
+	-- 		vim.g.copilot_assume_mapped = true
+	-- 		vim.g.copilot_tab_fallback = ""
+	-- 	end,
+	-- },
+	--
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
@@ -247,4 +233,37 @@ return {
 
 	-- Terminal splitting and resizing
 	{ "mrjones2014/smart-splits.nvim", lazy = false, build = "./kitty/install-kittens.bash" },
+
+	-- File Navigation
+	{
+		"mikavilpas/yazi.nvim",
+		version = "*",
+		event = "VeryLazy",
+		dependencies = {
+			{ "nvim-lua/plenary.nvim", lazy = true },
+		},
+		keys = {
+			{
+				"<leader>.",
+				mode = { "n", "v" },
+				"<cmd>Yazi<cr>",
+				desc = "Open yazi at the current file location",
+			},
+			{
+				"<leader>cw",
+				"<cmd>Yazi cwd<cr>",
+				desc = "Open the file manager in nvim's working directory",
+			},
+			{
+				"<c-up>",
+				"<cmd>Yazi toggle<cr>",
+				desc = "Resume the last yazi session",
+			},
+		},
+	},
+
+	{ -- Replace by Yazi
+		"nvim-tree/nvim-tree.lua",
+		enabled = false,
+	},
 }
