@@ -75,7 +75,7 @@ return {
 
 	{
 		"github/copilot.vim",
-		enabled = false,
+		-- enabled = false,
 		lazy = false,
 		config = function()
 			-- Mapping Tab is already used by nvim-cmp
