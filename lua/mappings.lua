@@ -4,7 +4,7 @@ local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>", { desc = "In Insert mode, just enter 'jk' to simulate ESC" })
-map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>", { desc = "Save file" })
 
 map("i", "<S-SPACE>", function()
 	vim.fn.feedkeys(vim.fn["copilot#Accept"](), "n") -- good for Ghostty terminal
@@ -53,3 +53,10 @@ map("n", "<leader><leader>h", require("smart-splits").swap_buf_left)
 map("n", "<leader><leader>j", require("smart-splits").swap_buf_down)
 map("n", "<leader><leader>k", require("smart-splits").swap_buf_up)
 map("n", "<leader><leader>l", require("smart-splits").swap_buf_right)
+-- Terminal splitting and resizing END
+
+-- LSP
+map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP Code Action" })
+map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "LSP Rename" })
+map("n", "<leader>cd", vim.lsp.buf.definition, { desc = "LSP Go to Definition" })
+map("n", "<leader>cu", vim.lsp.buf.references, { desc = "LSP References(uses)" })
