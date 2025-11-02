@@ -102,7 +102,7 @@ return {
 						["cmp.entry.get_documentation"] = true,
 					},
 					hover = { enabled = true },
-					signature = { enabled = true },
+					signature = { enabled = true, auto_open = { enabled = false } },
 				},
 				presets = {
 					bottom_search = false, -- use a classic bottom cmdline for search
@@ -266,5 +266,13 @@ return {
 	{ -- Replace by Yazi
 		"nvim-tree/nvim-tree.lua",
 		enabled = false,
+	},
+
+	{
+		"pohlrabi404/compile.nvim",
+		event = "VeryLazy",
+		pin = true,
+		opts = {},
+		keys = require("configs.compile"),
 	},
 }
