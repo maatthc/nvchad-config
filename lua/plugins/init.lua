@@ -145,24 +145,6 @@ return {
 			},
 		},
 	},
-	{
-		"ggandor/leap.nvim", -- Leap Motion has the key 's' hard coded, so we need to remove it to use 'f'
-		enabled = true,
-		keys = {
-			{ "f", mode = { "n", "x", "o" }, desc = "Leap Forward to" },
-			{ "F", mode = { "n", "x", "o" }, desc = "Leap Backward to" },
-			{ "fs", mode = { "n", "x", "o" }, desc = "Leap from Windows" },
-		},
-		config = function(_, opts)
-			local leap = require("leap")
-			for k, v in pairs(opts) do
-				leap.opts[k] = v
-			end
-			vim.keymap.set({ "n", "x", "o" }, "f", "<Plug>(leap-forward)")
-			vim.keymap.set({ "n", "x", "o" }, "F", "<Plug>(leap-backward)")
-			vim.keymap.set({ "n", "x", "o" }, "gf", "<Plug>(leap-from-window)")
-		end,
-	},
 
 	{
 		"hrsh7th/nvim-cmp",
