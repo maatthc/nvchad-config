@@ -116,6 +116,36 @@ return {
 	},
 
 	{
+		"folke/flash.nvim",
+		event = "VeryLazy",
+		opts = {
+			jump = { autojump = true, history = true, register = true },
+			label = { style = "inline", rainbow = { enabled = true } },
+			search = { wrap = false },
+			modes = { search = { enabled = true, highlight = { backdrop = true } }, char = { enabled = false } },
+		},
+		keys = {
+			{
+				"f",
+				mode = { "n", "x", "o" },
+				function()
+					require("flash").jump()
+				end,
+				desc = "Flash forward",
+			},
+			{
+				"F",
+				mode = { "n", "x", "o" },
+				function()
+					require("flash").jump({
+						search = { forward = false },
+					})
+				end,
+				desc = "Flash backward",
+			},
+		},
+	},
+	{
 		"ggandor/leap.nvim", -- Leap Motion has the key 's' hard coded, so we need to remove it to use 'f'
 		enabled = true,
 		keys = {
