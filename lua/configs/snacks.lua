@@ -64,19 +64,27 @@ return {
 					action = "<leader>th",
 					key = "t",
 					desc = "Themes",
-					icon = "󱥚",
+					icon = "🇦🇺",
 					padding = 1,
 				},
 				{
 					action = "<leader>ch",
 					key = "m",
 					desc = "Mappings",
-					icon = " ",
+					icon = "⌨️",
 					padding = 1,
 					gap = 1,
 				},
 				{
-					icon = " ",
+					action = ":EditZshrc",
+					key = "z",
+					desc = "Zshrc Config",
+					icon = "💻",
+					padding = 1,
+					gap = 1,
+				},
+				{
+					icon = "📄",
 					title = "Recent Files",
 				},
 				{
@@ -86,7 +94,7 @@ return {
 					padding = 1,
 				},
 				{
-					icon = " ",
+					icon = "📁",
 					title = "Projects",
 				},
 				{
