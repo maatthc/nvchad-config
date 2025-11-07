@@ -2,7 +2,9 @@ require("nvchad.mappings")
 
 local map = vim.keymap.set
 
+map("n", "<leader><leader>", "<cmd>Telescope find_files<cr>", { desc = "telescope find files - Mine" })
 map("n", ";", ":", { desc = "CMD enter command mode" })
+map("o", ".", ";", { desc = "In command mode, '.' as '; for ftFT'" })
 map("i", "jk", "<ESC>", { desc = "In Insert mode, just enter 'jk' to simulate ESC" })
 map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>", { desc = "Save file" })
 
@@ -18,6 +20,15 @@ map({ "n", "v", "i", "c" }, "<M-F23>", "<nop>")
 -- Fold options (using nvim-ufo)
 map("n", "zR", require("ufo").openAllFolds, { desc = "Open all folds" })
 map("n", "zM", require("ufo").closeAllFolds, { desc = "Close all folds" })
+map("n", "<leader>tz", function()
+	if vim.g.foldall then
+		vim.g.foldall = false
+		require("ufo").openAllFolds()
+	else
+		vim.g.foldall = true
+		require("ufo").closeAllFolds()
+	end
+end, { desc = "Fold All Toggle " })
 
 -- Esc to exit terminal mode
 map("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
@@ -26,7 +37,7 @@ map("n", "<leader>db", function()
 	require("snacks").dashboard.open()
 end, { desc = "Show Snack Dashboard" })
 
-map("n", "<leader>sp", function()
+map("n", "<leader>ts", function()
 	if vim.o.spell then
 		vim.o.spell = false
 		vim.notify("Spell check disabled")
@@ -34,7 +45,7 @@ map("n", "<leader>sp", function()
 		vim.o.spell = true
 		vim.notify("Spell check enabled")
 	end
-end, { desc = "Toggle Spell check" })
+end, { desc = "Spell check Toggle " })
 
 -- Terminal splitting and resizing
 -- mrjones2014/smart-splits.nvim
@@ -55,8 +66,8 @@ map("n", "<leader><leader>k", require("smart-splits").swap_buf_up)
 map("n", "<leader><leader>l", require("smart-splits").swap_buf_right)
 -- Terminal splitting and resizing END
 
--- LSP
-map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP Code Action" })
-map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "LSP Rename" })
-map("n", "<leader>cd", vim.lsp.buf.definition, { desc = "LSP Go to Definition" })
-map("n", "<leader>cu", vim.lsp.buf.references, { desc = "LSP References(uses)" })
+-- LSP --- Use grn/gca/gcd/gcr instead: gO list all symbols, In insert mode, <Ctrl-s> displays the function signature
+-- map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP Code Action" })
+-- map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "LSP Rename" })
+-- map("n", "<leader>cd", vim.lsp.buf.definition, { desc = "LSP Go to Definition" })
+-- map("n", "<leader>cu", vim.lsp.buf.references, { desc = "LSP References(uses)" })
