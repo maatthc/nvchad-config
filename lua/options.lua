@@ -25,4 +25,4 @@ vim.g.clipboard = {
 
 o.spelllang = "en_au"
 
-o.sessionoptions = "localoptions"
+o.sessionoptions = "buffers,curdir,folds,tabpages,winsize,winpos,localoptions"
