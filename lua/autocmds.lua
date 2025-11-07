@@ -49,3 +49,12 @@ autocmd({ "TermOpen", "BufEnter" }, {
 	end,
 	group = group,
 })
+
+-- Open help files in a vertical split
+autocmd("FileType", {
+	pattern = "help",
+	callback = function()
+		vim.cmd("wincmd L")
+	end,
+	group = group,
+})
