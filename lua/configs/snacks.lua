@@ -84,6 +84,14 @@ return {
 					gap = 1,
 				},
 				{
+					action = ":e ~/.config/kitty/kitty.conf",
+					key = "k",
+					desc = "Kitty Config",
+					icon = "🐱",
+					padding = 1,
+					gap = 1,
+				},
+				{
 					icon = "📄",
 					title = "Recent Files",
 				},
