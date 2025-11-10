@@ -15,7 +15,7 @@ end, { desc = "Copilot accept" })
 --- map shift+space send_text all \x1b[32;2u
 
 -- predictive_tap_hold is sending it for 's' and 'l'
-map({ "n", "v", "i", "c" }, "<M-F23>", "<nop>")
+map({ "n", "v", "i", "c", "o" }, "<M-F23>", "<nop>")
 
 -- Fold options (using nvim-ufo)
 map("n", "zR", require("ufo").openAllFolds, { desc = "Open all folds" })
