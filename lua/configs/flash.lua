@@ -1,18 +1,25 @@
 local M = {}
 
+local function search_begin_line(forward)
+	return {
+		search = {
+			forward = forward,
+			mode = function(str)
+				if string.match(str, "%a") then
+					return "\\<" .. str -- match beginning of words only
+				end
+				return str -- should cover numbers and simbols
+			end,
+		},
+	}
+end
+
 M.keys = {
 	{
 		"f",
 		mode = { "n" },
 		function()
-			require("flash").jump({
-				search = {
-					mode = function(str)
-						-- Should match only letters, make it a functions
-						return "\\<" .. str -- match beginning of words only
-					end,
-				},
-			})
+			require("flash").jump(search_begin_line(true))
 		end,
 		desc = "flash forward",
 	},
@@ -26,16 +33,17 @@ M.keys = {
 	},
 	{
 		"F",
-		mode = { "n", "x", "o" },
+		mode = { "n" },
 		function()
-			require("flash").jump({
-				search = {
-					forward = false,
-					mode = function(str)
-						return "\\<" .. str -- Match beginning of words only
-					end,
-				},
-			})
+			require("flash").jump(search_begin_line(false))
+		end,
+		desc = "Flash backward",
+	},
+	{
+		"F",
+		mode = { "x", "o" },
+		function()
+			require("flash").jump({ search = { forward = false } })
 		end,
 		desc = "Flash backward",
 	},
