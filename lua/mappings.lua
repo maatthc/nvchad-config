@@ -2,7 +2,9 @@ require("nvchad.mappings")
 
 local map = vim.keymap.set
 
-map("n", "<leader><leader>", "<cmd>Telescope find_files<cr>", { desc = "telescope find files - Mine" })
+map("n", "<leader>yp", ":let @+=expand('%:.')<cr>", { desc = "Copy relative path" })
+map("n", "<leader>yP", ":let @+=@%<cr>", { desc = "Copy absolute path" })
+map("n", "<space><space>", "<cmd>Telescope find_files<cr>", { desc = "telescope find files - Mine" })
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("o", ".", ";", { desc = "In command mode, '.' as '; for ftFT'" })
 map("i", "jk", "<ESC>", { desc = "In Insert mode, just enter 'jk' to simulate ESC" })
@@ -58,12 +60,7 @@ map("n", "<C-h>", require("smart-splits").move_cursor_left)
 map("n", "<C-j>", require("smart-splits").move_cursor_down)
 map("n", "<C-k>", require("smart-splits").move_cursor_up)
 map("n", "<C-l>", require("smart-splits").move_cursor_right)
-map("n", "<C-\\>", require("smart-splits").move_cursor_previous)
 
-map("n", "<leader><leader>h", require("smart-splits").swap_buf_left)
-map("n", "<leader><leader>j", require("smart-splits").swap_buf_down)
-map("n", "<leader><leader>k", require("smart-splits").swap_buf_up)
-map("n", "<leader><leader>l", require("smart-splits").swap_buf_right)
 -- Terminal splitting and resizing END
 
 -- LSP --- Use grn/gca/gcd/gcr instead: gO list all symbols, In insert mode, <Ctrl-s> displays the function signature
