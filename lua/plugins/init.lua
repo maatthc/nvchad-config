@@ -87,6 +87,31 @@ return {
 	},
 
 	{
+		"CopilotC-Nvim/CopilotChat.nvim",
+		dependencies = {
+			{ "nvim-lua/plenary.nvim", branch = "master" },
+		},
+		build = "make tiktoken",
+		opts = {
+			prompt = {
+				Rename = { prompt = "Rename the variable/function/class in the selected text based on context" },
+			},
+		},
+		keys = {
+			{ "<leader>zn", "<cmd>CopilotChatRename<cr>", mode = "v", desc = "Copilot Chat Rename" },
+			{ "<leader>zz", "<cmd>CopilotChat<cr>", mode = "n", desc = "Copilot Chat Open" },
+			{ "<leader>ze", "<cmd>CopilotChatExplain<cr>", mode = "v", desc = "Copilot Chat Explain" },
+			{ "<leader>zr", "<cmd>CopilotChatReview<cr>", mode = "v", desc = "Copilot Chat Review" },
+			{ "<leader>zf", "<cmd>CopilotChatFix<cr>", mode = "v", desc = "Copilot Chat Fix" },
+			{ "<leader>zo", "<cmd>CopilotChatOptimize<cr>", mode = "v", desc = "Copilot Chat Optimize" },
+			{ "<leader>zd", "<cmd>CopilotChatDocs<cr>", mode = "v", desc = "Copilot Chat Docs" },
+			{ "<leader>zt", "<cmd>CopilotChatTests<cr>", mode = "v", desc = "Copilot Chat Tests" },
+			{ "<leader>zm", "<cmd>CopilotChatCommit<cr>", mode = "n", desc = "Copilot Chat Commit" },
+			{ "<leader>zm", "<cmd>CopilotChatCommit<cr>", mode = "v", desc = "Copilot Chat Commit for selection" },
+		},
+	},
+
+	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
 		dependencies = {
@@ -101,6 +126,7 @@ return {
 						["vim.lsp.util.stylize_markdown"] = true,
 						["cmp.entry.get_documentation"] = true,
 					},
+					messages = { enabled = false },
 					hover = { enabled = true },
 					signature = { enabled = true, auto_open = { enabled = false } },
 				},
@@ -207,7 +233,12 @@ return {
 	},
 
 	-- Terminal splitting and resizing
-	{ "mrjones2014/smart-splits.nvim", lazy = false, build = "./kitty/install-kittens.bash" },
+	{
+		"mrjones2014/smart-splits.nvim",
+		lazy = false,
+		build = "./kitty/install-kittens.bash",
+		opts = { default_amount = 20, at_edge = "stop" },
+	},
 
 	-- File Navigation
 	{
@@ -248,5 +279,15 @@ return {
 		pin = true,
 		opts = {},
 		keys = require("configs.compile"),
+	},
+
+	{
+		"saxon1964/neovim-tips",
+		lazy = false,
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+		},
+		-- opts = { daily_tip = 2, show_daily_tip_footer = true },
+		opts = { show_daily_tip_footer = true },
 	},
 }
