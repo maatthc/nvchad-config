@@ -211,7 +211,6 @@ return {
 	{
 		"maatthc/fork-smart-splits.nvim",
 		lazy = false,
-		opts = { default_amount = 20 },
 		opts = { default_amount = 20, at_edge = "stop" },
 	},
 
