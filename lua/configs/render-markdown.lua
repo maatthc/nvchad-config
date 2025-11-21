@@ -13,7 +13,7 @@ local opts = {
 		below = "▔",
 		above = "▁",
 		left_pad = 0,
-		position = "left",
+		position = "overlay",
 		icons = {
 			"█ ",
 			"██ ",
