@@ -1,10 +1,27 @@
 require("nvchad.mappings")
 
 local map = vim.keymap.set
+local nomap = vim.keymap.del
+
+-- Unset NvChad defaults to remap
+nomap("n", "<leader>ds")
+nomap("n", "<leader>ma")
+nomap("n", "<leader>cm")
+nomap("n", "<leader>gt")
+nomap("n", "<leader>pt")
+
+-- Telescope
+map("n", "<space><space>", "<cmd>Telescope find_files<cr>", { desc = "telescope find files " })
+map("n", "<leader>fM", "<cmd>Telescope marks<CR>", { desc = "telescope find marks" })
+map("n", "<leader>fc", "<cmd>Telescope git_commits<CR>", { desc = "telescope git commits" })
+map("n", "<leader>fs", "<cmd>Telescope git_status<CR>", { desc = "telescope git status" })
+map("n", "<leader>fd", "<cmd>Telescope terms<CR>", { desc = "telescope pick hidden term" })
+
+map("n", "<leader>p", "<cmd>CodeDiff<CR>", { desc = "Git Diff" })
 
 map("n", "<leader>yp", ":let @+=expand('%:.')<cr>", { desc = "Copy relative path" })
 map("n", "<leader>yP", ":let @+=@%<cr>", { desc = "Copy absolute path" })
-map("n", "<space><space>", "<cmd>Telescope find_files<cr>", { desc = "telescope find files - Mine" })
+
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("o", ".", ";", { desc = "In command mode, '.' as '; for ftFT'" })
 map("i", "jk", "<ESC>", { desc = "In Insert mode, just enter 'jk' to simulate ESC" })
@@ -60,11 +77,11 @@ map({ "n", "t" }, "<C-h>", require("smart-splits").move_cursor_left)
 map({ "n", "t" }, "<C-j>", require("smart-splits").move_cursor_down)
 map({ "n", "t" }, "<C-k>", require("smart-splits").move_cursor_up)
 map({ "n", "t" }, "<C-l>", require("smart-splits").move_cursor_right)
-
 -- Terminal splitting and resizing END
 
--- LSP --- Use grn/gca/gcd/gcr instead: gO list all symbols, In insert mode, <Ctrl-s> displays the function signature
--- map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP Code Action" })
--- map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "LSP Rename" })
--- map("n", "<leader>cd", vim.lsp.buf.definition, { desc = "LSP Go to Definition" })
--- map("n", "<leader>cu", vim.lsp.buf.references, { desc = "LSP References(uses)" })
+-- LSP
+-- Use grn/gra/grd/grr/grt
+-- gO list all symbols, In insert mode, <Ctrl-s> displays the function signature
+-- https://neovim.io/doc/user/lsp.html#gra
+map("n", "grs", vim.diagnostic.setloclist, { desc = "LSP diagnostic loclist" })
+
