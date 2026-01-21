@@ -19,8 +19,8 @@ map("n", "<leader>fd", "<cmd>Telescope terms<CR>", { desc = "telescope pick hidd
 
 map("n", "<leader>p", "<cmd>CodeDiff<CR>", { desc = "Git Diff" })
 
-map("n", "<leader>yp", ":let @+=expand('%:.')<cr>", { desc = "Copy relative path" })
-map("n", "<leader>yP", ":let @+=@%<cr>", { desc = "Copy absolute path" })
+map("n", "<leader>yp", ":let @+=expand('%:.')<cr>", { desc = "Copy current buffer relative path" })
+map("n", "<leader>yP", ":let @+=@%<cr>", { desc = "Copy current buffer absolute path" })
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("o", ".", ";", { desc = "In command mode, '.' as '; for ftFT'" })
@@ -32,6 +32,15 @@ map("i", "<S-SPACE>", function()
 end, { desc = "Copilot accept" })
 --- To use with Kitty terminal, add this to your kitty.conf:
 --- map shift+space send_text all \x1b[32;2u
+map("n", "<leader>tp", function()
+	if vim.fn["copilot#Enabled"]() == 1 then
+		vim.cmd("Copilot disable")
+		print("Copilot Disabled")
+	else
+		vim.cmd("Copilot enable")
+		print("Copilot Enabled")
+	end
+end, { desc = "Copilot Toggle" })
 
 -- predictive_tap_hold is sending it for 's' and 'l'
 map({ "n", "v", "i", "c", "o" }, "<M-F23>", "<nop>")
