@@ -93,4 +93,13 @@ map({ "n", "t" }, "<C-l>", require("smart-splits").move_cursor_right)
 -- gO list all symbols, In insert mode, <Ctrl-s> displays the function signature
 -- https://neovim.io/doc/user/lsp.html#gra
 map("n", "grs", vim.diagnostic.setloclist, { desc = "LSP diagnostic loclist" })
+map("n", "<leader>td", function()
+	if vim.diagnostic.is_enabled() then
+		vim.diagnostic.enable(false)
+		print("LSP Diagnostics Disabled")
+	else
+		vim.diagnostic.enable()
+		print("LSP Diagnostics Enabled")
+	end
+end, { desc = "LSP diagnostic Toggle" })
 
