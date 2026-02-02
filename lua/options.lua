@@ -1,6 +1,9 @@
 require("nvchad.options")
 local o = vim.o
 
+vim.diagnostic.config({
+	virtual_lines = { current_line = true },
+})
 o.relativenumber = true
 o.cursorlineopt = "both"
 
