@@ -77,10 +77,11 @@ end, { desc = "Spell check Toggle " })
 
 -- Terminal splitting and resizing
 -- mrjones2014/smart-splits.nvim
-map("n", "<A-h>", require("smart-splits").resize_left)
-map("n", "<A-j>", require("smart-splits").resize_down)
-map("n", "<A-k>", require("smart-splits").resize_up)
-map("n", "<A-l>", require("smart-splits").resize_right)
+-- Comment to test 'mini.move'
+-- map("n", "<A-h>", require("smart-splits").resize_left)
+-- map("n", "<A-j>", require("smart-splits").resize_down)
+-- map("n", "<A-k>", require("smart-splits").resize_up)
+-- map("n", "<A-l>", require("smart-splits").resize_right)
 
 map({ "n", "t" }, "<C-h>", require("smart-splits").move_cursor_left)
 map({ "n", "t" }, "<C-j>", require("smart-splits").move_cursor_down)
@@ -102,4 +103,3 @@ map("n", "<leader>td", function()
 		print("LSP Diagnostics Enabled")
 	end
 end, { desc = "LSP diagnostic Toggle" })
-

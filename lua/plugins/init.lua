@@ -275,6 +275,7 @@ return {
 		-- opts = { daily_tip = 2, show_daily_tip_footer = true },
 		opts = { show_daily_tip_footer = true },
 	},
+
 	{
 		"chrisgrieser/nvim-rip-substitute",
 		cmd = "RipSubstitute",

@@ -51,7 +51,7 @@ local function choose_program(callback)
 end
 
 local langToCmd = {
-	zig = "zig build check --watch",
+	zig = "zig build run",
 	go = function(prg)
 		return "go run " .. prg
 	end,
