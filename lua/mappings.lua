@@ -24,7 +24,8 @@ map("n", "<leader>yP", ":let @+=@%<cr>", { desc = "Copy current buffer absolute 
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("o", ".", ";", { desc = "In command mode, '.' as '; for ftFT'" })
-map("i", "jk", "<ESC>", { desc = "In Insert mode, just enter 'jk' to simulate ESC" })
+-- map("i", "jk", "<ESC>", { desc = "In Insert mode, just enter 'jk' to simulate ESC" })
+map("n", "jk", ":", { desc = "In Normal mode, just enter 'jk' to simulate : " })
 map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>", { desc = "Save file" })
 
 map("i", "<S-SPACE>", function()
