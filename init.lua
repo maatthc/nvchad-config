@@ -1,3 +1,16 @@
+if os.getenv("SCROLL_MODE") then -- Minimal config for Kitty scroll mode
+	vim.keymap.set({ "n", "v" }, "q", "<Cmd>qa!<CR>")
+	vim.keymap.set({ "n", "v" }, "<ESC>", "<Cmd>qa!<CR>")
+	vim.keymap.set({ "n", "v" }, "yy", "yy<Cmd>qa!<Cr>")
+	vim.cmd([[
+    colorscheme wildcharm
+    set clipboard=unnamed cursorline cursorlineopt=both
+    set laststatus=0 nonu nornu signcolumn=no cmdheight=0 
+  ]])
+	vim.fn.search([[\S]], "b") -- Doesn't work
+	return
+end
+
 vim.g.base46_cache = vim.fn.stdpath("data") .. "/base46/"
 vim.g.mapleader = " "
 
