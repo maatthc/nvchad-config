@@ -7,6 +7,11 @@ vim.diagnostic.config({
 o.relativenumber = true
 o.cursorlineopt = "both"
 
+-- Background color of the selected text line
+vim.api.nvim_set_hl(0, "CursorLine", { bg = "#2e3440" })
+-- Text color and background of the active line number
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#b8473e", bg = "#2e3440" })
+
 -- Fold options (using nvim-ufo)
 o.foldcolumn = "1" -- '0' is not bad
 o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
