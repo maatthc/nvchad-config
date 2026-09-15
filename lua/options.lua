@@ -8,7 +8,7 @@ o.relativenumber = true
 o.cursorlineopt = "both"
 
 -- Background color of the selected text line
-vim.api.nvim_set_hl(0, "CursorLine", { bg = "#2e3440" })
+vim.api.nvim_set_hl(0, "CursorLine", { fg = "#535863", bg = "#2e3440" })
 -- Text color and background of the active line number
 vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#b8473e", bg = "#2e3440" })
 
