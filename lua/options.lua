@@ -4,13 +4,14 @@ local o = vim.o
 vim.diagnostic.config({
 	virtual_lines = { current_line = true },
 })
+
 o.relativenumber = true
 o.cursorlineopt = "both"
 
 -- Background color of the selected text line
-vim.api.nvim_set_hl(0, "CursorLine", { fg = "#535863", bg = "#2e3440" })
+vim.api.nvim_set_hl(0, "CursorLine", { bg = "#2e3440" })
 -- Text color and background of the active line number
-vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#b8473e", bg = "#2e3440" })
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#000000", bg = "#6868fa" })
 
 -- Fold options (using nvim-ufo)
 o.foldcolumn = "1" -- '0' is not bad
@@ -34,3 +35,8 @@ vim.g.clipboard = {
 o.spelllang = "en_au"
 
 o.sessionoptions = "buffers,curdir,folds,tabpages,winsize,winpos,localoptions"
+
+o.scrolloff = 5 -- Keep 5 lines above/below cursor
+o.autoindent = true -- Smart auto-indenting // Let the LSP handle it
+o.ignorecase = true -- Case insensitive search
+o.smartcase = true -- Case sensitive if uppercase in search
