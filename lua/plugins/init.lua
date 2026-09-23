@@ -288,15 +288,6 @@ return {
 		},
 	},
 
-	-- {
-	-- 	"esmuellert/vscode-diff.nvim",
-	-- 	dependencies = { "MunifTanjim/nui.nvim" },
-	-- 	cmd = "CodeDiff",
-	-- 	config = function()
-	-- 		require("configs.vscode-diff")
-	-- 	end,
-	-- },
-
 	-- Move code around
 	{
 		"nvim-mini/mini.move",
