@@ -9,17 +9,22 @@ nomap("n", "<leader>ma")
 nomap("n", "<leader>cm")
 nomap("n", "<leader>gt")
 nomap("n", "<leader>pt")
+nomap("n", "<leader>th")
+
+require("gitsigns_mappings")
+
+-- Clipboard
+vim.keymap.set({ "n", "i", "v" }, "<S-Insert>", "<C-R>+", { noremap = true })
 
 -- Telescope
 map("n", "<space><space>", "<cmd>Telescope find_files<cr>", { desc = "telescope find files " })
 map("n", "<leader>fM", "<cmd>Telescope marks<CR>", { desc = "telescope find marks" })
 map("n", "<leader>fd", "<cmd>Telescope terms<CR>", { desc = "telescope pick hidden term" })
 
-map("n", "<leader>gd", "<cmd>CodeDiff<CR>", { desc = "Git Diff" })
-map("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", { desc = "telescope git commits" })
-map("n", "<leader>gs", "<cmd>Telescope git_status<CR>", { desc = "telescope git status" })
-map("n", "<leader>gf", "<cmd>Telescope git_files<CR>", { desc = "telescope git files" })
-map("n", "<leader>gf", "<cmd>Telescope git_stash<CR>", { desc = "telescope git stash" })
+map("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", { desc = "git commits" })
+map("n", "<leader>gs", "<cmd>Telescope git_status<CR>", { desc = "git status" })
+map("n", "<leader>gf", "<cmd>Telescope git_files<CR>", { desc = "git files" })
+map("n", "<leader>gf", "<cmd>Telescope git_stash<CR>", { desc = "git stash" })
 
 map("n", "<leader>yp", ":let @+=expand('%:.')<cr>", { desc = "Copy current buffer relative path" })
 map("n", "<leader>yP", ":let @+=@%<cr>", { desc = "Copy current buffer absolute path" })

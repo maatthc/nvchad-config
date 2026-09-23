@@ -33,19 +33,20 @@ end, { desc = "Reset hunk" })
 map("n", "<leader>gH", gitsigns.stage_buffer, { desc = "Stage buffer " })
 map("n", "<leader>gR", gitsigns.reset_buffer, { desc = "Reset buffer" })
 map("n", "<leader>gp", gitsigns.preview_hunk, { desc = "Preview hunk" })
-map("n", "<leader>gi", gitsigns.preview_hunk_inline, { desc = "Inline hunk" })
+map("n", "<leader>gi", gitsigns.preview_hunk_inline, { desc = "Preview Inline hunk" })
 
 map("n", "<leader>gb", function()
 	gitsigns.blame_line()
 	-- gitsigns.blame_line({ full = true })
 end, { desc = "blame line" })
 
--- map("n", "<leader>hd", gitsigns.diffthis)
+-- map("n", "<leader>gD", gitsigns.diffthis, { desc = "Diff this line" })
 
-map("n", "<leader>gD", function()
+map("n", "<leader>gd", function()
 	gitsigns.diffthis("~")
-end, { desc = "Diff this" })
+end, { desc = "Diff this buffer" })
 
+-- populates the quickfix list with Git hunks across your entire project
 -- map("n", "<leader>hQ", function()
 -- 	gitsigns.setqflist("all")
 -- end)
@@ -57,3 +58,6 @@ map("n", "<leader>tw", gitsigns.toggle_word_diff, { desc = "Toggle word diff" })
 
 -- Text object
 map({ "o", "x" }, "gh", gitsigns.select_hunk, { desc = "Select hunk" })
+
+-- Toggle lines colours
+map("n", "<leader>th", gitsigns.toggle_linehl, { desc = "Toggle git highlights" })
