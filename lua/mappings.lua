@@ -100,7 +100,7 @@ map("n", "grd", function()
 		symbols = { "function", "class", "method", "constructor", "struct" },
 	})
 end, { desc = "LSP document Symbols" })
-map("n", "grp", function()
+map("n", "<leader>td", function()
 	if vim.diagnostic.is_enabled() then
 		vim.diagnostic.enable(false)
 		print("LSP Diagnostics Disabled")
