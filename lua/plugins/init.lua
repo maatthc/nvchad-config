@@ -225,10 +225,36 @@ return {
 	},
 
 	-- Terminal splitting and resizing
+	-- {
+	-- 	-- "maatthc/fork-smart-splits.nvim",
+	-- 	dir = "/home/maat/Development/lua/fork-smart-splits.nvim",
+	-- 	lazy = false,
+	-- 	opts = { default_amount = 20, at_edge = "split" },
+	-- 	-- opts = { default_amount = 20, at_edge = "wrap" },
+	-- 	-- opts = { default_amount = 20, at_edge = "stop" },
+	-- },
+
 	{
-		"maatthc/fork-smart-splits.nvim",
+		"smart-splits-nvim/smart-splits.nvim",
+		branch = "v3",
 		lazy = false,
-		opts = { default_amount = 20, at_edge = "stop" },
+		opts = { -- Plugin Configuration
+			mux = {
+				backend = "smart-splits-backend-kitty",
+			},
+			move = {
+				at_edge = "split",
+			},
+		},
+		dependencies = {
+			{
+				"smart-splits-nvim/backend-kitty",
+				module = "smart-splits-backend-kitty",
+				opts = { -- Backend Configuration
+					-- password = 'secret',
+				},
+			},
+		},
 	},
 
 	-- File Navigation
