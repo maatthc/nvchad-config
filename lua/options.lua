@@ -13,6 +13,9 @@ vim.api.nvim_set_hl(0, "CursorLine", { bg = "#2e3440" })
 -- Text color and background of the active line number
 vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#000000", bg = "#6868fa" })
 
+vim.api.nvim_set_hl(0, "TelescopeSelection", { fg = "#D79921", bg = "#2e3440", bold = true })
+vim.api.nvim_set_hl(0, "TelescopeMatching", { fg = "#83a598", bold = true })
+
 -- Fold options (using nvim-ufo)
 o.foldcolumn = "1" -- '0' is not bad
 o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
