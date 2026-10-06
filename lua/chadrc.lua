@@ -38,6 +38,23 @@ M.ui = {
 				end
 				return "%#St_relativepath# " .. vim.fn.expand("%:.:h") .. "/"
 			end,
+			file = function()
+				local filename = vim.fn.expand("%:t")
+				local extension = vim.fn.expand("%:e")
+				if filename == "" then
+					filename = "Empty"
+				end
+				local devicons_present, devicons = pcall(require, "nvim-web-devicons")
+				local icon = "    " -- Fallback icon
+				if devicons_present then
+					local f_icon = devicons.get_icon(filename, extension, { default = true })
+					if f_icon then
+						icon = " " .. f_icon .. " "
+					end
+				end
+				local modified_icon = vim.bo.modified and " %#DiagnosticError#X" or " %#DiagnosticInfo#●"
+				return "%#St_file_bg#" .. icon .. "%#St_file_txt#" .. filename .. modified_icon .. " "
+			end,
 		},
 	},
 	nvdash = {
