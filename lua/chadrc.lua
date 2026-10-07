@@ -52,7 +52,7 @@ M.ui = {
 						icon = " " .. f_icon .. " "
 					end
 				end
-				local modified_icon = vim.bo.modified and " %#DiagnosticError#X" or " %#DiagnosticInfo#●"
+				local modified_icon = vim.bo.modified and " %#DiagnosticInfo#●" or " %#DiagnosticError#X"
 				return "%#St_file_bg#" .. icon .. "%#St_file_txt#" .. filename .. modified_icon .. " "
 			end,
 		},
