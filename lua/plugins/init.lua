@@ -236,14 +236,14 @@ return {
 
 	{
 		"smart-splits-nvim/smart-splits.nvim",
-		branch = "v3",
+		branch = "master",
 		lazy = false,
 		opts = { -- Plugin Configuration
 			mux = {
 				backend = "smart-splits-backend-kitty",
 			},
 			move = {
-				at_edge = "split",
+				at_edge = "wrap",
 			},
 		},
 		dependencies = {
