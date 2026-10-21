@@ -39,7 +39,7 @@ local function close_diff_win(key)
 end
 
 require("gitsigns").setup({
-	linehl = true,
+	-- linehl = true,
 	current_line_blame_opts = {
 		virt_text = true,
 		virt_text_pos = "eol",
