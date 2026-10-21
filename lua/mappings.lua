@@ -31,7 +31,6 @@ map("n", "<leader>yP", ":let @+=@%<cr>", { desc = "Copy current buffer absolute 
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("o", ".", ";", { desc = "In command mode, '.' as '; for ftFT'" })
--- map("i", "jk", "<ESC>", { desc = "In Insert mode, just enter 'jk' to simulate ESC" })
 map("n", "jk", ":", { desc = "In Normal mode, just enter 'jk' to simulate : " })
 map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>", { desc = "Save file" })
 
@@ -114,3 +113,8 @@ map("n", "<leader>td", function()
 		print("LSP Diagnostics Enabled")
 	end
 end, { desc = "LSP diagnostic Toggle" })
+
+-- Delete comments: Done with ./autocmds.lua
+--
+-- Delete full word that is befor the cursor with Crtl+Backspace
+map("i", "<C-BS>", "<C-w>", { noremap = true, desc = "Delete back word" })
