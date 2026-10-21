@@ -58,3 +58,22 @@ autocmd("FileType", {
 	end,
 	group = group,
 })
+
+-- Delete Comments
+vim.api.nvim_create_augroup("DeleteComments", { clear = true })
+
+vim.api.nvim_create_autocmd("FileType", {
+	group = "DeleteComments",
+	pattern = "*",
+	callback = function()
+		local commentstring = vim.bo.commentstring
+		if commentstring and commentstring ~= "" then
+			local comment_symbol = commentstring:gsub("%%s", ""):gsub("%s+$", "")
+			local escaped_symbol = vim.fn.escape(comment_symbol, [[/*~^$.[]])
+			vim.keymap.set("n", "<Leader>dc", function()
+				-- Execute the global delete command in Vim
+				vim.cmd(string.format([[g/^\s*%s/d]], escaped_symbol))
+			end, { buffer = true, desc = "Globally delete comment lines", silent = true })
+		end
+	end,
+})
