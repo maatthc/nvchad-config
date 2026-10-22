@@ -29,7 +29,20 @@ M.term = {
 M.ui = {
 	statusline = {
 		theme = "default",
-		order = { "mode", "cwd", "relativepath", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cursor" },
+		order = {
+			"mode",
+			"cwd",
+			"relativepath",
+			"file",
+			"git",
+			"num_selected_lines",
+			"%=",
+			"lsp_msg",
+			"%=",
+			"diagnostics",
+			"lsp",
+			"cursor",
+		},
 		modules = {
 			relativepath = function()
 				local path = vim.api.nvim_buf_get_name(stbufnr())
@@ -54,6 +67,16 @@ M.ui = {
 				end
 				local modified_icon = vim.bo.modified and " %#DiagnosticInfo#●" or " %#DiagnosticError#X"
 				return "%#St_file_bg#" .. icon .. "%#St_file_txt#" .. filename .. modified_icon .. " "
+			end,
+			num_selected_lines = function()
+				local mode = vim.fn.mode()
+				if mode:find("[vV\22]") then
+					local start_line = vim.fn.line("v")
+					local end_line = vim.fn.line(".")
+					local lines = math.abs(end_line - start_line) + 1
+					return "%#St_file_bg#" .. "  Selected lines " .. lines
+				end
+				return ""
 			end,
 		},
 	},
