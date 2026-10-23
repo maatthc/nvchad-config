@@ -5,8 +5,7 @@
 
 Run `:MasonInstallAll` command after lazy.nvim finishes downloading plugins.
 
-Run `:Copilot setup` to setup Copilot and follow the instructions.
-
+Run `:TSInstall` to install Tree-sitter plugins. If it fails with 'xx not found', install the `tree-sitter-cli` via your SO package manager e.g. **brew/apt/dnf**
 
 ## Terminal
 When you start a new Terminal from within Neovim, it will set the NVIM environment variable. 
