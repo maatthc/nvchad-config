@@ -4,11 +4,12 @@ local function search_begin_line(forward)
 	return {
 		search = {
 			forward = forward,
+			history = true,
 			mode = function(str)
 				if string.match(str, "%a") then
 					return "\\<" .. str -- match beginning of words only
 				end
-				return str -- should cover numbers and simbols
+				return str -- should cover numbers and symbols
 			end,
 		},
 	}
@@ -46,6 +47,22 @@ M.keys = {
 			require("flash").jump({ search = { forward = false } })
 		end,
 		desc = "Flash backward",
+	},
+	{
+		"r",
+		mode = "o",
+		function()
+			require("flash").remote()
+		end,
+		desc = "Remote Flash",
+	},
+	{
+		"R",
+		mode = { "o", "x" },
+		function()
+			require("flash").treesitter_search()
+		end,
+		desc = "Treesitter Search",
 	},
 }
 
