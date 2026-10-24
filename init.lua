@@ -6,6 +6,7 @@ if os.getenv("SCROLL_MODE") then
 	vim.keymap.set({ "n", "v" }, "yy", "yy<Cmd>qa!<Cr>")
 	vim.cmd([[
     colorscheme wildcharm
+    set ignorecase smartcase
     set clipboard=unnamed cursorline cursorlineopt=both
     set laststatus=0 nonu nornu signcolumn=no cmdheight=0
   ]])
@@ -27,11 +28,11 @@ if os.getenv("SCROLL_MODE") then
 	})
 
 	vim.pack.add({ "https://github.com/folke/flash.nvim" })
-	local flash = require("flash")
-	flash.setup()
-	vim.keymap.set({ "n", "x", "o" }, "f", function()
-		flash.jump()
-	end, { desc = "Flash: Navigate your code with search labels" })
+	local flash = require("flash") --Navigate your code with search labels
+	flash.setup(require("configs.flash").opts)
+	for _, map in ipairs(require("configs.flash").keys) do
+		vim.keymap.set(map.mode, map[1], map[2], map.opts)
+	end
 
 	return
 end
