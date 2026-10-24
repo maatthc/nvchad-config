@@ -1,7 +1,7 @@
 -- load defaults i.e lua_lsp
 require("nvchad.configs.lspconfig").defaults()
 
-local servers = { "html", "cssls", "zls", "eslint", "ts_ls", "pylsp", "gopls", "clangd" }
+local servers = { "html", "cssls", "zls", "eslint", "ts_ls", "vue_ls", "pylsp", "clangd" } --"devicetree"
 local nvlsp = require("nvchad.configs.lspconfig")
 
 -- custom lsp configs

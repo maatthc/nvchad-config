@@ -62,10 +62,12 @@ return {
 				"css",
 				"javascript",
 				"typescript",
+				"vue",
 				"json",
 				"zig",
 				"python",
-				"go",
+				"regex",
+				"bash",
 			},
 			textobjects = require("configs.treesitter-textobjects"),
 		},
@@ -225,15 +227,6 @@ return {
 	},
 
 	-- Terminal splitting and resizing
-	-- {
-	-- 	-- "maatthc/fork-smart-splits.nvim",
-	-- 	dir = "/home/maat/Development/lua/fork-smart-splits.nvim",
-	-- 	lazy = false,
-	-- 	opts = { default_amount = 20, at_edge = "split" },
-	-- 	-- opts = { default_amount = 20, at_edge = "wrap" },
-	-- 	-- opts = { default_amount = 20, at_edge = "stop" },
-	-- },
-
 	{
 		"smart-splits-nvim/smart-splits.nvim",
 		branch = "master",

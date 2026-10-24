@@ -70,10 +70,18 @@ vim.api.nvim_create_autocmd("FileType", {
 		if commentstring and commentstring ~= "" then
 			local comment_symbol = commentstring:gsub("%%s", ""):gsub("%s+$", "")
 			local escaped_symbol = vim.fn.escape(comment_symbol, [[/*~^$.[]])
-			vim.keymap.set("n", "<Leader>dc", function()
-				-- Execute the global delete command in Vim
+			vim.keymap.set({ "n" }, "<Leader>dc", function()
 				vim.cmd(string.format([[g/^\s*%s/d]], escaped_symbol))
-			end, { buffer = true, desc = "Globally delete comment lines", silent = true })
+			end, { buffer = true, desc = "Delete ALL commented lines", silent = true })
+			vim.keymap.set("x", "<Leader>dc", function()
+				-- Get the start and end lines of the visual selection
+				local start_line = vim.fn.line("v")
+				local end_line = vim.fn.line(".")
+				if start_line > end_line then
+					start_line, end_line = end_line, start_line
+				end
+				vim.cmd(string.format([[%d,%dg/^\s*%s/d]], start_line, end_line, escaped_symbol))
+			end, { buffer = true, desc = "Delete commented lines in selection", silent = true })
 		end
 	end,
 })

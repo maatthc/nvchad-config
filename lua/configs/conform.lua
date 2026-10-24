@@ -1,6 +1,5 @@
 local options = {
 	formatters_by_ft = {
-		go = { "gofmt" },
 		python = { "black" },
 		lua = { "stylua" },
 		css = { "prettier" },
@@ -9,6 +8,7 @@ local options = {
 		zig = { "zigfmt" },
 		javascript = { "prettier" },
 		typescript = { "prettier" },
+		vue = { "prettier" },
 		typescriptreact = { "prettier" },
 	},
 	-- Perhas use prettierd?
