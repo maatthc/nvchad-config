@@ -1,5 +1,6 @@
 -- Minimal config for Kitty scroll mode - Kitty config:
--- map kitty_mod+h launch --stdin-source=@screen_scrollback --stdin-add-formatting --type=overlay zsh -c "SCROLL_MODE=2 nvim -c 'silent write! /tmp/kitty_scrollback_buffer | te cat /tmp/kitty_scrollback_buffer - ' -c 'set number' -c 'set relativenumber'"
+-- map kitty_mod+h launch --stdin-source=@screen_scrollback --stdin-add-formatting --type=overlay zsh -c "SCROLL_MODE=please nvim -c 'silent write! /tmp/kitty_scrollback_buffer | te cat /tmp/kitty_scrollback_buffer - ' -c 'set noswapfile' -c 'set number' -c 'set relativenumber'"
+
 if os.getenv("SCROLL_MODE") then
 	vim.keymap.set({ "n", "v" }, "q", "<Cmd>qa!<CR>")
 	vim.keymap.set({ "n", "v" }, "<ESC>", "<Cmd>qa!<CR>")
