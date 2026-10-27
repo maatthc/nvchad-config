@@ -29,9 +29,8 @@ map("n", "<leader>gf", "<cmd>Telescope git_stash<CR>", { desc = "git stash" })
 map("n", "<leader>yp", ":let @+=expand('%:.')<cr>", { desc = "Copy current buffer relative path" })
 map("n", "<leader>yP", ":let @+=@%<cr>", { desc = "Copy current buffer absolute path" })
 
-map("n", ";", ":", { desc = "CMD enter command mode" })
+-- map("n", ";", ":", { desc = "CMD enter command mode" }) -- Don't need with split keyboard
 map("o", ".", ";", { desc = "In command mode, '.' as '; for ftFT'" })
-map("n", "jk", ":", { desc = "In Normal mode, just enter 'jk' to simulate : " })
 map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>", { desc = "Save file" })
 
 map("i", "<S-SPACE>", function()
@@ -82,17 +81,15 @@ map("n", "<leader>ts", function()
 end, { desc = "Spell check Toggle " })
 
 -- Terminal splitting and resizing: mrjones2014/smart-splits.nvim
--- Comment to test 'mini.move'
+-- Comment out to test : used by'mini.move'
 -- map("n", "<A-h>", require("smart-splits").resize_left)
 -- map("n", "<A-j>", require("smart-splits").resize_down)
 -- map("n", "<A-k>", require("smart-splits").resize_up)
 -- map("n", "<A-l>", require("smart-splits").resize_right)
-
 map({ "n", "t" }, "<C-h>", require("smart-splits").move_cursor_left)
 map({ "n", "t" }, "<C-j>", require("smart-splits").move_cursor_down)
 map({ "n", "t" }, "<C-k>", require("smart-splits").move_cursor_up)
 map({ "n", "t" }, "<C-l>", require("smart-splits").move_cursor_right)
--- Terminal splitting and resizing END
 
 -- LSP: 'gr*' https://neovim.io/doc/user/lsp.html#gra
 vim.keymap.set("n", "grf", function()
