@@ -84,6 +84,7 @@ M.ui = {
 	nvdash = {
 		load_on_startup = false,
 	},
+	telescope = { style = "bordered" },
 }
 
 return M
