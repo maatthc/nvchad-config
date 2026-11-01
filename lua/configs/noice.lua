@@ -26,15 +26,5 @@ return {
 				replace = false,
 			},
 		},
-		{ -- Due to warning: position_encoding param is required in vim.lsp.util.make_position
-			filter = {
-				warning = true,
-				event = "notify",
-				cond = function(e)
-					return vim.startswith(e:content(), "position_encoding param is required")
-				end,
-			},
-			opts = { skip = true },
-		},
 	},
 }
