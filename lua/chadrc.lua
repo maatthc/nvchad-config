@@ -65,6 +65,7 @@ M.ui = {
 						icon = " " .. f_icon .. " "
 					end
 				end
+				-- For all available colours: ':highlight DiagnosticHint', etc
 				local modified_icon = vim.bo.modified and " %#DiagnosticInfo#●" or " %#DiagnosticError#X"
 				return "%#St_file_bg#" .. icon .. "%#St_file_txt#" .. filename .. modified_icon .. " "
 			end,
@@ -74,7 +75,7 @@ M.ui = {
 					local start_line = vim.fn.line("v")
 					local end_line = vim.fn.line(".")
 					local lines = math.abs(end_line - start_line) + 1
-					return "%#St_file_bg#" .. "  Selected lines " .. lines
+					return "%#DiagnosticOk# " .. " Selected lines " .. lines
 				end
 				return ""
 			end,
