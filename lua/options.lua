@@ -15,6 +15,8 @@ vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#000000", bg = "#6868fa" })
 
 vim.api.nvim_set_hl(0, "TelescopeSelection", { fg = "#D79921", bg = "#2e3440", bold = true })
 vim.api.nvim_set_hl(0, "TelescopeMatching", { fg = "#83a598", bold = true })
+-- Force set the background color for nvim-notify
+vim.api.nvim_set_hl(0, "NotifyBackground", { bg = "#2e3440" })
 
 -- Fold options (using nvim-ufo)
 o.foldcolumn = "1" -- '0' is not bad

@@ -33,20 +33,11 @@ map("n", "<leader>yP", ":let @+=@%<cr>", { desc = "Copy current buffer absolute 
 map("o", ".", ";", { desc = "In command mode, '.' as '; for ftFT'" })
 map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>", { desc = "Save file" })
 
-map("i", "<S-SPACE>", function()
-	vim.fn.feedkeys(vim.fn["copilot#Accept"](), "n")
-end, { desc = "Copilot accept" })
 --- To use with Kitty terminal(the best), add this to your kitty.conf:
 --- map shift+space send_text all \x1b[32;2u
 map("n", "<leader>tp", function()
-	if vim.fn["copilot#Enabled"]() == 1 then
-		vim.cmd("Copilot disable")
-		print("Copilot Disabled")
-	else
-		vim.cmd("Copilot enable")
-		print("Copilot Enabled")
-	end
-end, { desc = "Copilot Toggle" })
+	vim.cmd("LLMToggleAutoSuggest")
+end, { desc = "Ai suggestions Toggle" })
 
 -- predictive_tap_hold(QMK keyboard) is sending it for 's' and 'l', probably other keys are having similar issues
 map({ "n", "v", "i", "c", "o" }, "<M-F23>", "<nop>")
