@@ -29,4 +29,4 @@
 - [Reference][example]
 - <user@test.com>
 
-- ![Image](./assets/waves.gif)
+![Image](../assets/waves.gif)

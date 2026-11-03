@@ -82,6 +82,7 @@ end
 
 local efm = {
 	go = "%f:%l:%c: %m",
+	Makefile = { "%[(%S+):(%d+):.+%]", "12" },
 	zig = "%f:%l:%c: %m",
 	default = "%f:%l:%c: %m",
 }
