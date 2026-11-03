@@ -194,7 +194,7 @@ return {
 	-- Terminal splitting and resizing
 	{
 		"smart-splits-nvim/smart-splits.nvim",
-		branch = "master",
+		version = "^3.0.0",
 		lazy = false,
 		opts = { -- Plugin Configuration
 			mux = {
@@ -207,6 +207,7 @@ return {
 		dependencies = {
 			{
 				"smart-splits-nvim/backend-kitty",
+				build = "./kitten/install_relative_resize.lua",
 				module = "smart-splits-backend-kitty",
 				opts = { -- Backend Configuration
 					-- password = 'secret',
@@ -280,6 +281,7 @@ return {
 		config = function()
 			require("mini.move").setup({
 				mappings = {
+					-- Visual Mode
 					left = "<A-h>",
 					right = "<A-l>",
 					down = "<A-j>",
